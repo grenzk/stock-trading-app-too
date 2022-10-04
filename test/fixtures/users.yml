@@ -1,0 +1,11 @@
+first_user:
+  email: john@email.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+second_user:
+  email: steve@email.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+third_user:
+  email: james@email.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>

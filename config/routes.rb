@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
-
-  resources :landing_page
-  root "landing_page#index"
+  devise_for :users
+  root 'pages#home'
 end
