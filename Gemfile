@@ -78,4 +78,4 @@ gem 'hotwire-livereload', '~> 1.2'
 
 gem 'simple_form', '~> 5.1'
 
-gem "devise", "~> 4.8"
+gem 'devise', '~> 4.8'
