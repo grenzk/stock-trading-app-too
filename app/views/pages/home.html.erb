@@ -1,7 +1,14 @@
 <section id='hero'>
   <header>
     <%= image_tag("tradeX-logo", class: 'logo') %>
-    <%= link_to 'LOGIN', new_user_session_path, class: 'btn-outline' %>
+    <% if user_signed_in? %>
+    <%= link_to 'LOGOUT', destroy_user_session_path,
+        data: { turbo_method: :delete }, 
+        class: 'btn-outline' %>
+  <% else %>
+     <%= link_to 'LOGIN', new_user_session_path, class: 'btn-outline' %>
+  <% end %>
+    
   </header>
 
   <main>
