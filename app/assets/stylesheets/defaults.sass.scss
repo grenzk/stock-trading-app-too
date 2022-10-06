@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $white;
+  text-decoration: none;
+  font: 1rem $text;
+}
+
+h1 {
+  font: 900 3rem $heading;
+}
+
+h5 {
+  font: bold 1.5rem $text;
+}
+
+body {
+  width: 100vw;
+  background-color: black;
+}
+
+header {
+  height: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3vmin;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+}

@@ -1,0 +1,26 @@
+.logo {
+  width: 17vmin;
+}
+
+.btn-primary {
+  padding: 10px 25px;
+  background-color: $purple;
+  text-align: center;
+}
+
+.btn-secondary {
+  padding: 10px 25px;
+  background-color: $grey;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-outline {
+  border: 1px solid $purple;
+  color: $purple;
+  font-weight: bold;
+  padding: 5px 15px;
+}

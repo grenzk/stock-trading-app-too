@@ -1,0 +1,48 @@
+#hero {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(home-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  main {
+    padding: 10% 20%;
+
+    h1, h5 {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 5rem;
+    }
+
+    .btn-primary, .btn-secondary {
+      font-size: 1.5rem;
+      margin: 0;
+      padding: 15px 100px;
+    }
+
+    .btn-group {
+      margin-top: 50px;
+    }
+
+    .social-icons {
+      position: absolute;
+      bottom: 3vmin;
+      left: 3vmin;
+      display: flex;
+      flex-direction: column;
+
+      .social-icon {
+        width: 25px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+
+
+
+
