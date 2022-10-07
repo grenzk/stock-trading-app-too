@@ -33,3 +33,7 @@ main {
   flex-direction: column;
   height: 85%;
 }
+
+input:focus {
+  outline: none;
+}
