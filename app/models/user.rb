@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable, :validatable
 
-  enum role: %i[admin trader]
+  enum role: %i[trader admin]
 
   def set_default_role
     self.role ||= :trader
