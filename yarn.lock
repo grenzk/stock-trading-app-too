@@ -147,20 +147,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"app@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "app@workspace:."
-  dependencies:
-    "@hotwired/stimulus": ^3.1.0
-    "@hotwired/turbo-rails": ^7.2.0
-    "@prettier/plugin-ruby": ^3.2.2
-    esbuild: ^0.15.10
-    prettier: 2.2.1
-    prettier-plugin-erb: ^0.4.0
-    sass: ^1.55.0
-  languageName: unknown
-  linkType: soft
-
 "aproba@npm:^1.0.3 || ^2.0.0":
   version: 2.0.0
   resolution: "aproba@npm:2.0.0"
@@ -1265,6 +1251,20 @@ __metadata:
   checksum: fb58f5e46b6923ae67b87ad5ef1c5ab6d427a17db0bead84570c2df3cd50b4ceb880ebdba2d60726588272890bae842a744e1ecce5bd2a2a582fccd5068309eb
   languageName: node
   linkType: hard
+
+"stock-trading-app@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "stock-trading-app@workspace:."
+  dependencies:
+    "@hotwired/stimulus": ^3.1.0
+    "@hotwired/turbo-rails": ^7.2.0
+    "@prettier/plugin-ruby": ^3.2.2
+    esbuild: ^0.15.10
+    prettier: 2.2.1
+    prettier-plugin-erb: ^0.4.0
+    sass: ^1.55.0
+  languageName: unknown
+  linkType: soft
 
 "string-width@npm:^1.0.2 || 2 || 3 || 4, string-width@npm:^4.2.3":
   version: 4.2.3
