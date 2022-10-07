@@ -1,11 +1,14 @@
 first_user:
+  role: admin
   email: john@email.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
 second_user:
+  role: trader
   email: steve@email.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
 third_user:
+  role: trader
   email: james@email.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
