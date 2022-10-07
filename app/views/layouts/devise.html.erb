@@ -6,15 +6,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', :media => "all", 'data-turbo-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true %>
     <%= hotwire_livereload_tags if Rails.env.development? %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
+  <body class='devise-container'>
+    <% if notice.present?%> <p class="notice"><%= notice %></p> <% end %>
+    <% if alert.present? %> <p class="alert"><%= alert %></p> <% end %>
     <%= yield %>
+
   </body>
 </html>
