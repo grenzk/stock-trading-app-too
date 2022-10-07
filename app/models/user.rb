@@ -1,5 +1,19 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  after_initialize :set_default_role, if: :new_record?
+
   devise :database_authenticatable, :registerable, :validatable
+
+  enum role: %i[trader admin]
+
+  def set_default_role
+    self.role ||= :trader
+  end
+
+  def admin?
+    self.role == 'admin'
+  end
+
+  def trader?
+    self.role == 'trader'
+  end
 end

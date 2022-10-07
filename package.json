@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "stock-trading-app",
   "dependencies": {
     "@hotwired/stimulus": "^3.1.0",
     "@hotwired/turbo-rails": "^7.2.0",
@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@prettier/plugin-ruby": "^3.2.2",
-    "prettier": "^2.2.1",
+    "prettier": "2.2.1",
     "prettier-plugin-erb": "^0.4.0"
   }
 }
