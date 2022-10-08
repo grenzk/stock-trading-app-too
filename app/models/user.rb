@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   after_initialize :set_default_role, if: :new_record?
 
-  devise :database_authenticatable, :registerable, :validatable
+  devise :database_authenticatable, :registerable, :validatable, :confirmable
 
   enum role: %i[trader admin]
 
