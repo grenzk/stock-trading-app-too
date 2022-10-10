@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :stocks, dependent: :destroy
-  has_many :transactions, dependent: :destroy
+  has_many :user_transactions, dependent: :destroy
 
   after_initialize :set_default_role, if: :new_record?
 

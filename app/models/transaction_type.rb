@@ -1,3 +1,3 @@
 class TransactionType < ApplicationRecord
-  has_many :transactions, dependent: :destroy
+  has_many :user_transactions, dependent: :destroy
 end
