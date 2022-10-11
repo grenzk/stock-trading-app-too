@@ -8,4 +8,7 @@ Rails.application.routes.draw do
 
   resources :stocks
   get '/portfolio', to: 'stocks#index'
+
+  resources :marketplace
+  get 'marketplace/?symbol=:symbol', to: 'marketplace#show', as: 'company_info'
 end

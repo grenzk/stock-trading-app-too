@@ -4,10 +4,6 @@ module ApplicationHelper
     client.stock_market_list(:mostactive)
   end
 
-  def collection
-    client = IEX::Api::Client.new
-  end
-
   def symbol_list
     client = IEX::Api::Client.new
     client.ref_data_symbols()
@@ -23,6 +19,12 @@ module ApplicationHelper
     client = IEX::Api::Client.new
     logo = client.logo(symbol)
     logo.url
+  end
+
+  def percent_color(value)
+    if value < 0
+      'negative'
+    end
   end
 
 end

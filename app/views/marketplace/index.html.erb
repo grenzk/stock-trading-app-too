@@ -1,0 +1,65 @@
+<main class='marketplace' >
+  <div class='list-container'>
+    <div class='input-box'>
+      <div class='input-icon'>
+        <span class="material-symbols-outlined">search</span>
+      </div>
+      <input type="search">
+    </div>
+    <ul>
+      <% most_active.each do |item| %>
+        <%= link_to company_info_path(symbol: item.symbol) do %>
+          <li class ='list row-between'>
+            <div class='row'>
+              <%= image_tag company_logo(item.symbol), class: 'stock-logo' %>
+              <div class='col'>
+                <p><%= item.company_name %></p>
+                <h5><%= item.symbol %></h5>
+              </div>
+            </div>
+            
+            <div class='col-end'>
+              <%= item.latest_price %>
+              <p class="percentage <%= percent_color(item.change_percent) %>"><%= item.change_percent %><p>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+
+  </div>
+  <div class='output-container'>
+  <div class='row-between'>
+    <div class='row'>
+      <%= image_tag @logo, class: 'stock-logo' %>
+      <h2><%= @company_name %> ( <%= @company_symbol %> )</h2>
+    </div>
+    <div class='col-end'>
+      <h5><%= @latest_price %></h5>
+      <p class="percentage <%= percent_color(@change_percent) %>"><%= @change_percent %></p>
+    </div>
+  </div>
+  </br>
+  <p class='description'><%= @description %></p>
+  <ul class='news-list'>
+    <% @news.each do |article| %>
+      <%= link_to article.url do %>
+        <li class =''>
+          <p class='txt-s'><%=  format_date(article.datetime) %></p>
+          <h5><%= article.headline %></h5>
+          <p><%= slice_text(article.summary) %>...</p>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+  <div class='buy-container row-end'>
+    <div class='input-box'>
+      <div class='input-icon'>
+        <span class="material-symbols-outlined">attach_money</span>
+      </div>
+      <input type="text" placeholder= '0.00'/>
+    </div>
+    <button class='btn-primary buy'>Buy</button>
+  </div>
+  </div>
+</main>

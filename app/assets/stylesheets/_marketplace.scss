@@ -1,0 +1,135 @@
+.marketplace {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  height: 85vh;
+}
+
+.list-container {
+  width: 30%;
+  height: 100%;
+  border-right: 2px solid $grey;
+  padding: 20px;
+
+  ul {
+    height: 90%; 
+  }
+
+  .input-box {
+    margin-bottom: 20px;
+
+    input {
+      width: 90%;
+    }
+
+    .input-icon {
+      width: 10%;
+
+      span {
+        transform: rotate(90deg);
+      }
+    }
+
+    
+  }
+
+  
+}
+
+ul {
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}
+
+ul::-webkit-scrollbar {
+  display: none;
+}
+
+.output-container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 100%;
+  position: relative;
+  padding: 5vmin 0;
+
+  .row-between{
+    padding: 0 5vmin;
+  }
+
+  .description {
+    padding: 0 5vmin;
+  }
+
+  .news-list {
+    padding: 5vmin;
+
+    li {
+      margin-bottom: 20px;
+      padding: 20px 0;
+      border-top: 1px solid $grey;
+    }
+    
+  }
+
+  .buy-container {
+    width: 100%;
+    border-top: 2px solid $grey;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    background-color: $black;
+
+    input {
+      height: 45px;
+    }
+
+    .btn-primary {
+      margin-left: 10px;
+    }
+
+    ::placeholder {
+      text-align: end;
+    }
+  }
+}
+
+.input-box {
+  display: flex;
+
+  input {
+    border: none;
+    background-color: $grey;
+    border-radius: 0 5px 5px 0;
+    height: 40px;
+    padding: 10px;
+  }
+
+  .input-icon {
+    @extend input;
+    border-radius: 5px 0 0 5px;
+    padding: 5px;
+    place-items: center;
+
+    span {
+      color: rgba(255, 255, 255, 0.52);
+    }
+  }
+}
+
+.list {
+  background-color: $grey;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 5px 10px;
+}
+
+.stock-logo {
+  width: 36px;
+  margin-right: 10px;
+}
+
+
+
