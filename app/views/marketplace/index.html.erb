@@ -7,20 +7,20 @@
       <input type="search">
     </div>
     <ul>
-      <% most_active.each do |item| %>
-        <%= link_to company_info_path(symbol: item.symbol) do %>
+      <% @most_active.each do |stock| %>
+        <%= link_to company_info_path(symbol: stock.symbol) do %>
           <li class ='list row-between'>
             <div class='row'>
-              <%= image_tag company_logo(item.symbol), class: 'stock-logo' %>
+              <%= image_tag company_logo(stock.symbol), class: 'stock-logo' %>
               <div class='col'>
-                <p><%= item.company_name %></p>
-                <h5><%= item.symbol %></h5>
+                <p><%= stock.company_name %></p>
+                <h5><%= stock.symbol %></h5>
               </div>
             </div>
             
             <div class='col-end'>
-              <%= item.latest_price %>
-              <p class="percentage <%= percent_color(item.change_percent) %>"><%= item.change_percent %><p>
+              <%= stock.latest_price %>
+              <p class="percentage <%= percent_color(stock.change_percent) %>"><%= stock.change_percent %><p>
             </div>
           </li>
         <% end %>
