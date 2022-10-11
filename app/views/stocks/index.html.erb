@@ -1,7 +1,32 @@
 <main class='marketplace' >
   <div class='list-container'>
-    
+    <div class='search-box'>
+      <div class='search-icon'>
+        <span class="material-symbols-outlined">search</span>
+      </div>
+      <input type="search">
+    </div>
+    <ul>
+      <% most_active.each do |item| %>
+        <li class ='stock-list row-between'>
+          <div class='row'>
+            <%= image_tag company_logo(item.symbol), class: 'stock-logo' %>
+            <div class='col'>
+              <p><%= item.company_name %></p>
+              <h5><%= item.symbol %></h5>
+            </div>
+          </div>
+          
+          <div class='col-end'>
+            <%= item.latest_price %>
+            <p class="percentage <%= 'negative' if item.change_percent_s.to_f < 0 %>"><%= item.change_percent_s.to_f %><p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+
   </div>
   <div class='output-container'>
+
   </div>
 </main>

@@ -27,5 +27,32 @@
 
 .btn-link {
   color: $purple;
-  
+}
+
+.percentage.negative {
+  color: red;
+}
+
+.percentage {
+  color: green;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-end {
+  @extend .col;
+  align-items: flex-end;
+}
+
+.row-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  align-items: center;
 }

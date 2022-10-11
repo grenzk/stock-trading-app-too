@@ -5,6 +5,7 @@
   color: $white;
   text-decoration: none;
   font: 1rem $text;
+  list-style: none;
 }
 
 h1 {
@@ -37,4 +38,9 @@ main {
 
 input:focus {
   outline: none;
+}
+
+input {
+  background-color: transparent;
+  border: none;
 }
