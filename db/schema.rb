@@ -55,7 +55,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_100036) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.integer "role", default: 0
-    t.float "cash", default: 100000.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

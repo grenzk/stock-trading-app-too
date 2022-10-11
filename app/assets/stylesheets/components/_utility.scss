@@ -6,11 +6,13 @@
   padding: 10px 25px;
   background-color: $purple;
   text-align: center;
+  border: none;
 }
 
 .btn-secondary {
   padding: 10px 25px;
   background-color: $grey;
+  border: none;
 }
 
 .btn-group {
@@ -27,5 +29,44 @@
 
 .btn-link {
   color: $purple;
-  
+}
+
+.percentage.negative {
+  color: red;
+}
+
+.percentage {
+  color: green;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-end {
+  @extend .col;
+  align-items: flex-end;
+}
+
+.row-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.txt-s {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.609);
 }

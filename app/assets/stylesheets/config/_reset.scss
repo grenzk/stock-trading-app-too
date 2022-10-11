@@ -5,10 +5,15 @@
   color: $white;
   text-decoration: none;
   font: 1rem $text;
+  list-style: none;
 }
 
 h1 {
   font: 900 3rem $heading;
+}
+
+h2 {
+  font: 900 2rem $text;
 }
 
 h5 {
@@ -17,7 +22,8 @@ h5 {
 
 body {
   width: 100vw;
-  background-color: black;
+  height: 100vh;
+  background-color: $black;
 }
 
 header {
@@ -36,4 +42,9 @@ main {
 
 input:focus {
   outline: none;
+}
+
+input {
+  background-color: transparent;
+  border: none;
 }
