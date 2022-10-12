@@ -1,5 +1,5 @@
-<main class='marketplace' >
-  <div class='list-container'>
+<main class='page-container' >
+  <div class='left-pane'>
     <div class='input-box'>
       <div class='input-icon'>
         <span class="material-symbols-outlined">search</span>
@@ -9,7 +9,7 @@
     <ul>
       <% @most_active.each do |stock| %>
         <%= link_to company_info_path(symbol: stock.symbol) do %>
-          <li class ='list row-between'>
+          <li class ='card row-between'>
             <div class='row'>
               <%= image_tag company_logo(stock.symbol), class: 'stock-logo' %>
               <div class='col'>
@@ -28,7 +28,7 @@
     </ul>
 
   </div>
-  <div class='output-container'>
+  <div class='right-pane'>
   <div class='row-between'>
     <div class='row'>
       <%= image_tag @logo, class: 'stock-logo' %>

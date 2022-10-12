@@ -1,34 +1,96 @@
-<main class='marketplace' >
-  <div class='list-container'>
-    <div class='search-box'>
-      <div class='search-icon'>
-        <span class="material-symbols-outlined">search</span>
+<main class='page-container' id='portfolio'>
+  <div class='left-pane'>
+    <div class='card'>
+      <p>Portfolio Value</p>
+      <h2>$ 133, 491</h2>
+      <div class='row-between'>
+        <div class='col'>
+          <h5>57,000</h5>
+          <p>Total Cost</p>
+        </div>
+
+        <div class='col-end'>
+          <h5 class='percentage <%=percent_color(134.19) %>'>+134.19%</h5>
+          <p>Total Gain</p>
+        </div>
       </div>
-      <input type="search">
     </div>
-    <ul>
-      <% most_active.each do |item| %>
-        <%= link_to stock_path %>
-          <li class ='stock-list row-between'>
-            <div class='row'>
-              <%= image_tag company_logo(item.symbol), class: 'stock-logo' %>
-              <div class='col'>
-                <p><%= item.company_name %></p>
-                <h5><%= item.symbol %></h5>
-              </div>
-            </div>
-            
-            <div class='col-end'>
-              <%= item.latest_price %>
-              <p class="percentage <%= 'negative' if item.change_percent_s.to_f < 0 %>"><%= item.change_percent_s.to_f %><p>
-            </div>
-          </li>
-        <% end %>
-      <% end %>
-    </ul>
-
+    <form>
+      <p>Order Form</p>
+      <div class='input-box'>
+        <label>Symbol</label>
+        <input type="text" placeholder='ex: MSFT'/>
+      </div>
+      <div class='input-box'>
+        <label>Quantity</label>
+        <input type="number" placeholder='0.00 shares'/>
+      </div>
+      <div class='input-box'>
+        <label>Price</label>
+        <input type="number" placeholder='0.00 USD'/>
+      </div>
+      <div class='btn-group'>
+        <button class='btn-primary'>Buy</button>
+        <button class='btn-secondary'>Sell</button>
+      </div>
+    </form>
   </div>
-  <div class='output-container'>
 
+  <div class='right-pane'>
+    <table>
+      <thead>
+        <tr class='table-header'>
+          <th>Shares</th>
+          <th>Price Per Share</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td>
+          <p>MSFT</p>
+          <p class='txt-g'>10 MSFT</p>
+        </td>
+        <td>
+          <p>8,174.66</p>
+          <p class='percentage <%=percent_color(4.24) %>'>+4.24%</p>
+        </td>
+        <td>
+          <p><span class='txt-s'>$</span> 81.75K</p>
+          <p class='percentage <%=percent_color(133.66) %>'>+133.66%</p>
+        </td>
+        </tr>
+        <tr>
+        <td>
+          <p>AMD</p>
+          <p class='txt-g'>50000 AMD</p>
+        </td>
+        <td>
+          <p>5.06</p>
+          <p class='percentage <%=percent_color(0.0426) %>'>+0.0426%</p>
+        </td>
+        <td>
+          <p><span class='txt-s'>$</span> 253K</p>
+          <p class='percentage <%=percent_color(133.66) %>'>+13.66%</p>
+        </td>
+        </tr>
+        <tr>
+        <td>
+          <p>TSLA</p>
+          <p class='txt-g'>100 TSLA</p>
+        </td>
+        <td>
+          <p>8,174.66</p>
+          <p class='percentage <%=percent_color(-4.24) %>'>-4.24%</p>
+        </td>
+        <td>
+          <p><span class='txt-s'>$</span> 1.75K</p>
+          <p class='percentage <%=percent_color(-133.66) %>'>-133.66%</p>
+        </td>
+        </tr>
+        <tr>
+        
+      </tbody>
+    </table>
   </div>
 </main>

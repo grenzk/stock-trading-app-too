@@ -1,4 +1,4 @@
-.marketplace {
+.page-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -6,7 +6,7 @@
   height: 85vh;
 }
 
-.list-container {
+.left-pane {
   width: 30%;
   height: 100%;
   border-right: 2px solid $grey;
@@ -21,6 +21,7 @@
 
     input {
       width: 90%;
+      border-radius: 0 5px 5px 0;
     }
 
     .input-icon {
@@ -47,7 +48,7 @@ ul::-webkit-scrollbar {
   display: none;
 }
 
-.output-container {
+.right-pane {
   display: flex;
   flex-direction: column;
   width: 70%;
@@ -84,31 +85,29 @@ ul::-webkit-scrollbar {
 
     input {
       height: 45px;
+      border-radius: 0 5px 5px 0;
     }
 
     .btn-primary {
       margin-left: 10px;
-    }
-
-    ::placeholder {
-      text-align: end;
     }
   }
 }
 
 .input-box {
   display: flex;
+  align-items: center;
 
   input {
     border: none;
     background-color: $grey;
-    border-radius: 0 5px 5px 0;
+    border-radius: 5px;
     height: 40px;
     padding: 10px;
   }
 
   .input-icon {
-    @extend input;
+    background-color: $grey;
     border-radius: 5px 0 0 5px;
     padding: 5px;
     place-items: center;
@@ -119,7 +118,7 @@ ul::-webkit-scrollbar {
   }
 }
 
-.list {
+.card {
   background-color: $grey;
   border-radius: 5px;
   margin: 5px 0;

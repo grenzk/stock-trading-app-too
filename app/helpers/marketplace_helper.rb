@@ -7,4 +7,10 @@ module MarketplaceHelper
   def slice_text(text)
     text.slice(0, 160)
   end
+
+  def company_logo(symbol)
+    client = IEX::Api::Client.new
+    logo = client.logo(symbol)
+    logo.url
+  end
 end

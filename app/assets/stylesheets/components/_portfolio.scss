@@ -1,0 +1,80 @@
+#portfolio {
+  .right-pane {
+    padding: 5vmin;
+    align-items: center;
+  }
+
+  .left-pane {
+    p {
+      color: grey;
+    }
+  }
+
+  .card {
+    padding: 25px;
+    margin-bottom: 15px;
+  }
+
+  .row-between {
+    margin-top: 20px;
+  }
+
+  form {
+    padding: 15px;
+    border: 2px solid $grey;
+    border-radius: 5px;
+    input {
+      border-radius: 5px;
+      text-align: right;
+    }
+
+    p {
+      padding-bottom: 20px;
+    }
+  
+    label {
+      padding-right: 10px;
+    }
+
+    .btn-group {
+      width: 100%;
+
+      button {
+        width: 50%;
+        margin: 0 10px;
+      }
+    }
+  }
+
+  
+}
+
+table {
+  width: 90%;
+  height: 100%;
+  background-color: $grey;
+  border-radius: 5px;
+  padding: 30px 50px;
+
+  tr {
+    text-align: right;
+  }
+  
+  th:first-child, td:first-child {
+    text-align: left;
+  }
+  
+  th {
+    font-weight: bold;
+    border-bottom: 1px solid #4b4b4b9b;
+    padding-bottom: 30px;
+  }
+  
+  td {
+    padding: 20px 0;
+    vertical-align: baseline;
+  }
+
+}
+
+
