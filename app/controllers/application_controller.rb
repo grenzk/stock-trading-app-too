@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     return admin_path if current_user.admin?
-    return marketplace_index_path if current_user.trader?
+    return portfolio_path if current_user.trader?
   end
 end
