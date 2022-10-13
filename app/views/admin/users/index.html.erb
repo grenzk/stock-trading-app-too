@@ -3,6 +3,8 @@
 
 <%= link_to 'Log Out', destroy_user_session_path, data: { turbo_method: :delete } %>
 
+<%= link_to 'Create', new_admin_user_path %>
+
 <table>
   <thead>
     <tr>
@@ -18,9 +20,16 @@
         <td><%= user.email %></td>
         <td><%= user.role %></td>
         <td>
-          <%= link_to 'Edit' %>
+          <%= link_to 'Edit', edit_admin_user_path(user) %>
           <%= link_to 'Show', admin_user_path(user) %>
-          <%= link_to 'Delete' %>
+          <%=
+            link_to 'Delete',
+                    admin_user_path(user),
+                    data: {
+                      'turbo-method': :delete,
+                      'turbo-confirm': 'Are you sure?'
+                    }
+          %>
         </td>
       </tr>
     <% end %>

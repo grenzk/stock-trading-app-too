@@ -1,1 +1,38 @@
-<h1>Show</h1>
+<h1>User</h1>
+<hr />
+
+<table>
+  <tr>
+    <td>Email:</td>
+    <td><%= @user.email %></td>
+  </tr>
+
+  <tr>
+    <td>Role:</td>
+    <td><%= @user.role %></td>
+  </tr>
+
+  <tr>
+    <td>Verified:</td>
+    <td><%= @user.confirmed_at || 'unconfirmed' %></td>
+  </tr>
+
+  <tr>
+    <td>Approved:</td>
+    <td><%= @user.approved %></td>
+  </tr>
+
+  <tr>
+    <td>
+      <%=
+        link_to 'Delete',
+        admin_user_path(@user),
+        data: {
+          'turbo-method': :delete,
+          'turbo-confirm': 'Are you sure?'
+        }
+      %>
+    </td>
+    <td><%= link_to 'Edit', edit_admin_user_path(@user) %></td>
+  </tr>
+</table>

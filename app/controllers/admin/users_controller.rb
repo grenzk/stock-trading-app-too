@@ -9,6 +9,38 @@ class Admin::UsersController < ApplicationController
   def show
   end
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+    @user.confirmed_at = Time.now
+
+    if @user.save
+      redirect_to admin_users_path, notice: 'Account was successfully created.'
+    else
+      flash.now[:notice] = @user.errors.full_messages.to_sentence
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to admin_users_path, notice: 'Account was successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to admin_users_path, notice: 'Account was successfully deleted.'
+  end
+
   private
 
   def require_admin
@@ -20,6 +52,11 @@ class Admin::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(
+      :email,
+      :password,
+      :password_confirmation,
+      :approved
+    )
   end
 end
