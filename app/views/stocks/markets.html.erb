@@ -41,10 +41,10 @@
   </div>
   </br>
   <p class='description'><%= @description %></p>
-  <ul class='news-list'>
+  <ul class='list-container'>
     <% @news.each do |article| %>
       <%= link_to article.url do %>
-        <li class =''>
+        <li>
           <p class='txt-s'><%=  format_date(article.datetime) %></p>
           <h5><%= article.headline %></h5>
           <p><%= slice_text(article.summary) %>...</p>
