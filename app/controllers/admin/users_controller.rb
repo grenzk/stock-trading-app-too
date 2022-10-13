@@ -9,6 +9,23 @@ class Admin::UsersController < ApplicationController
   def show
   end
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+    @user.confirmed_at = Time.now
+
+    if @user.save
+      redirect_to admin_users_path,
+                  notice: 'Account was successfully created.'
+    else
+      flash.now[:notice] = @user.errors.full_messages.to_sentence
+      render :new
+    end
+  end
+
   private
 
   def require_admin
@@ -20,6 +37,11 @@ class Admin::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :approved)
+    params.require(:user).permit(
+      :email,
+      :password,
+      :password_confirmation,
+      :approved
+    )
   end
 end
