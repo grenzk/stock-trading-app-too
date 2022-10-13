@@ -25,13 +25,11 @@
   <tr>
     <td>
       <%=
-        button_to 'Delete',
+        link_to 'Delete',
         admin_user_path(@user),
-        method: :delete,
-        form: {
-          data: {
-            turbo_confirm: 'Are you sure?'
-          }
+        data: {
+          'turbo-method': :delete,
+          'turbo-confirm': 'Are you sure?'
         }
       %>
     </td>

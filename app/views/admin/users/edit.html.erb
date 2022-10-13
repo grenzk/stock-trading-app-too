@@ -18,21 +18,7 @@
     </tr>
 
     <tr>
-      <td>
-        <%=
-          button_to 'Delete',
-          admin_user_path(@user),
-          method: :delete,
-          form: {
-            data: {
-              turbo_confirm: 'Are you sure?'
-            }
-          }
-        %>
-      </td>
-    </tr>
-
-    <tr>
+      <td><%= link_to 'Cancel', admin_users_path %></td>
       <td><%= f.submit %></td>
     </tr>
   </table>
