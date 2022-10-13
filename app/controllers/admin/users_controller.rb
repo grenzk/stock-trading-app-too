@@ -18,11 +18,21 @@ class Admin::UsersController < ApplicationController
     @user.confirmed_at = Time.now
 
     if @user.save
-      redirect_to admin_users_path,
-                  notice: 'Account was successfully created.'
+      redirect_to admin_users_path, notice: 'Account was successfully created.'
     else
       flash.now[:notice] = @user.errors.full_messages.to_sentence
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to admin_users_path, notice: 'Account was successfully updated.'
+    else
+      render :edit
     end
   end
 

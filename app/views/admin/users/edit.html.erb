@@ -1,0 +1,39 @@
+<h1>User</h1>
+
+<%= simple_form_for [:admin, @user], html: { data: { turbo: false } } do |f| %>
+  <table>
+    <tr>
+      <td>Email</td>
+      <td><%= f.input_field :email %></td>
+    </tr>
+
+    <tr>
+      <td>Verified</td>
+      <td><%= @user.confirmed_at || 'Not verified' %></td>
+    </tr>
+
+    <tr>
+      <td>Approved</td>
+      <td><%= f.input :approved, as: :boolean %></td>
+    </tr>
+
+    <tr>
+      <td>
+        <%=
+          button_to 'Delete',
+          admin_user_path(@user),
+          method: :delete,
+          form: {
+            data: {
+              turbo_confirm: 'Are you sure?'
+            }
+          }
+        %>
+      </td>
+    </tr>
+
+    <tr>
+      <td><%= f.submit %></td>
+    </tr>
+  </table>
+<% end %>
