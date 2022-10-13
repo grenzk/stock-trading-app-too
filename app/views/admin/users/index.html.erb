@@ -10,6 +10,7 @@
     <tr>
       <th>Email</th>
       <th>Role</th>
+      <th>Approved</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -19,6 +20,7 @@
       <tr>
         <td><%= user.email %></td>
         <td><%= user.role %></td>
+        <td><%= user.approved? ? 'Approved' : 'Pending' %></td>
         <td>
           <%= link_to 'Edit', edit_admin_user_path(user) %>
           <%= link_to 'Show', admin_user_path(user) %>
