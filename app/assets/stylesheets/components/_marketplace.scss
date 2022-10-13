@@ -10,7 +10,7 @@
   width: 30%;
   height: 100%;
   border-right: 2px solid $grey;
-  padding: 20px;
+  padding: 5vmin;
 
   ul {
     height: 90%; 
@@ -64,17 +64,6 @@ ul::-webkit-scrollbar {
     padding: 0 5vmin;
   }
 
-  .news-list {
-    padding: 5vmin;
-
-    li {
-      margin-bottom: 20px;
-      padding: 20px 0;
-      border-top: 1px solid $grey;
-    }
-    
-  }
-
   .buy-container {
     width: 100%;
     border-top: 2px solid $grey;
@@ -88,9 +77,17 @@ ul::-webkit-scrollbar {
       border-radius: 0 5px 5px 0;
     }
 
+    .input-icon {
+      height: 45px;
+    }
+
     .btn-primary {
       margin-left: 10px;
     }
+  }
+
+  .list-container {
+    padding: 5vmin;
   }
 }
 
@@ -109,8 +106,10 @@ ul::-webkit-scrollbar {
   .input-icon {
     background-color: $grey;
     border-radius: 5px 0 0 5px;
-    padding: 5px;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    height: 40px;
 
     span {
       color: rgba(255, 255, 255, 0.52);
@@ -128,6 +127,15 @@ ul::-webkit-scrollbar {
 .stock-logo {
   width: 36px;
   margin-right: 10px;
+}
+
+.list-container {
+
+  li {
+    padding: 20px 0;
+    border-top: 1px solid $grey;
+  }
+  
 }
 
 

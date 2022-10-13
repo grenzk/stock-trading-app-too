@@ -9,7 +9,10 @@ Rails.application.routes.draw do
 
   resources :stocks
   get '/portfolio', to: 'stocks#index'
+  get '/transactions', to: 'stocks#transactions', as: 'transactions'
 
   resources :marketplace
   get 'marketplace/?symbol=:symbol', to: 'marketplace#index', as: 'company_info'
+
+  
 end
