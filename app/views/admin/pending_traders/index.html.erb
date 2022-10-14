@@ -1,0 +1,24 @@
+<h1>Pending Traders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Approved</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <% @users.each do |user|  %>
+    <tr>
+      <td><%= link_to user.email, admin_user_path(user) %></td>
+      <td><%= user.approved? ? 'Approved' : 'Pending' %></td>
+      <td>
+        <%= simple_form_for(user, url: admin_pending_trader_path(user), html: { data: { turbo: false } }) do |f| %>
+          <%= f.hidden_field :approved, value: true %>
+          <%= f.submit 'Approve Trader' %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
