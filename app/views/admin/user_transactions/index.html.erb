@@ -1,1 +1,30 @@
 <h1>User Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Symbol</th>
+      <th>Company</th>
+      <th>Shares</th>
+      <th>Price</th>
+      <th>Value</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.user.email %></td>
+        <td><%= transaction.symbol %></td>
+        <td><%= transaction.company_name %></td>
+        <td><%= transaction.shares %></td>
+        <td><%= transaction.price %></td>
+        <td><%= transaction.value %></td>
+        <td><%# transaction.transaction_type.name %></td>
+        <td><%= transaction.user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
