@@ -3,7 +3,7 @@ class Stock < ApplicationRecord
 
   validates :symbol, :company_name, presence: true
 
-  def self.stocks_data(symbol)
+  def self.data(symbol)
     client =
       IEX::Api::Client.new(
         publishable_token:
