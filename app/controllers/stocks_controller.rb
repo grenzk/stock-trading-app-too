@@ -1,5 +1,5 @@
 class StocksController < ApplicationController
-  def portfolio
+  def index
   end
 
   def Transactions
