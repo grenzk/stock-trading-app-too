@@ -3,6 +3,7 @@ class StocksController < ApplicationController
   before_action :require_approved, except: %i[index markets]
 
   def index
+    @stocks = current_user.stocks.where.not(shares: 0).order(symbol: :ASC)
   end
 
   def Transactions
