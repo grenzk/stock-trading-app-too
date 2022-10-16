@@ -4,23 +4,13 @@ class Stock < ApplicationRecord
   validates :symbol, :company_name, presence: true
 
   def self.data(symbol)
-    client =
-      IEX::Api::Client.new(
-        publishable_token:
-          Rails.application.credentials[:iex][:publishable_token],
-        secret_token: Rails.application.credentials[:iex][:secret_token],
-        endpoint: 'https://cloud.iexapis.com/v1'
-      )
-
-    begin
-      new(
-        symbol: symbol,
-        company_name: client.company(symbol).company_name,
-        cost_price: client.quote(symbol).latest_price
-      )
-    rescue StandardError
-      nil
-    end
+    new(
+      symbol: symbol,
+      company_name: @client.company(symbol).company_name,
+      cost_price: @client.quote(symbol).latest_price
+    )
+  rescue StandardError
+    nil
   end
 
   def self.check_stocks(symbol)
