@@ -11,6 +11,16 @@ class Stock < ApplicationRecord
         secret_token: Rails.application.credentials[:iex][:secret_token],
         endpoint: 'https://cloud.iexapis.com/v1'
       )
+
+    begin
+      new(
+        symbol: symbol,
+        company_name: client.company(symbol).company_name,
+        cost_price: client.quote(symbol).latest_price
+      )
+    rescue StandardError
+      nil
+    end
   end
 
   def check_stocks(symbol)
