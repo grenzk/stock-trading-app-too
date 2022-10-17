@@ -7,6 +7,7 @@ class CreateUserTransactions < ActiveRecord::Migration[7.0]
       t.float :price
       t.float :value
       t.integer :transaction_type_id
+      t.string :name
 
       t.timestamps
     end

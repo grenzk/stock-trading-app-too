@@ -38,6 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_100036) do
     t.float "price"
     t.float "value"
     t.integer "transaction_type_id"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
