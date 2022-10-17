@@ -20,16 +20,26 @@
     <tbody>
       <% @stocks.each do |stock| %>
         <tr>
-          <td><%= stock.symbol %></td>
+          <td><%= link_to stock.symbol, stock_path(stock) %></td>
           <td><%= stock.company_name %></td>
           <td><%= stock.shares %></td>
-          <td><%= format_number stock.cost_price %></td>
+          <td><%= format_number(stock.cost_price) %></td>
           <td><%= format_number(stock.cost_price * stock.shares) %></td>
           <td>
-            <%= link_to 'Sell', get_sellstock_path(stock.symbol) %>
+            <%# link_to 'Sell', get_sellstock_path(stock.symbol) %>
           </td>
           <td>
-            <%= link_to 'Buy', quote_path(stock.symbol) %>
+            <%# link_to 'Buy', quote_path(stock.symbol) %>
+          </td>
+          <td>
+            <%=
+              link_to 'Delete',
+                      stocks_path,
+                      data: {
+                        'turbo-method': :delete,
+                        'turbo-confirm': 'Are you sure?'
+                      }
+            %>
           </td>
         </tr>
       <% end %>
@@ -37,7 +47,7 @@
       <tr>
         <td>TOTAL</td>
         <td></td>
-        <td><%# format_number(compute_total @stocks) %></td>
+        <td><%= format_number(compute_total @stocks) %></td>
         <td></td>
       </tr>
     </tbody>

@@ -6,6 +6,36 @@ class StocksController < ApplicationController
     @stocks = current_user.stocks.where.not(shares: 0).order(symbol: :ASC)
   end
 
+  def show
+  end
+
+  def new
+    @stock = Stock.new
+  end
+
+  def create
+    @stock = current_user.buy_stock(stock_params, stock_params[:shares].to_f)
+
+    Transaction.record @stock, 'buy'
+    redirect_to stocks_path, notice: 'Your purchase was successful.'
+  end
+
+  def edit
+  end
+
+  def update
+    if @stock.update(stock_params)
+      redirect_to @stock, notice: 'Stock was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @stock.destroy
+    redirect_to stocks_url, notice: 'Stock was successfully deleted.'
+  end
+
   def Transactions
   end
 
