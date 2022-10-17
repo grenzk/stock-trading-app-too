@@ -1,5 +1,6 @@
 class Stock < ApplicationRecord
   belongs_to :user
+  attr_accessor :transact_shares
 
   validates :symbol, :company_name, presence: true
 

@@ -16,7 +16,7 @@ class StocksController < ApplicationController
   def create
     @stock = current_user.buy_stock(stock_params, stock_params[:shares].to_f)
 
-    Transaction.record @stock, 'buy'
+    UserTransaction.record(@stock, 1)
     redirect_to stocks_path, notice: 'Your purchase was successful.'
   end
 
