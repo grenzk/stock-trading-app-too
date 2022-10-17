@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   end
 
   resources :stocks
+  resources :quotes, except: [:show]
+  get 'quotes/:symbol', to: 'quotes#show'
   get '/portfolio', to: 'stocks#index'
   get '/transactions', to: 'stocks#transactions', as: 'transactions'
   get '/markets', to: 'stocks#markets', as: 'markets'

@@ -1,6 +1,6 @@
-<%#
+<%=
   if current_user.approved?
-  link_to '+ Buy Stock', new_quote_path, class: 'btn float-right'
+  link_to '+ Buy Stock', new_quote_path
   end
 %>
 
@@ -29,7 +29,7 @@
             <%# link_to 'Sell', get_sellstock_path(stock.symbol) %>
           </td>
           <td>
-            <%# link_to 'Buy', quote_path(stock.symbol) %>
+            <% link_to 'Buy', quote_path(stock.symbol) %>
           </td>
           <td>
             <%=
