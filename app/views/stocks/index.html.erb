@@ -34,7 +34,7 @@
           <td>
             <%=
               link_to 'Delete',
-                      stocks_path,
+                      stock_path(stock),
                       data: {
                         'turbo-method': :delete,
                         'turbo-confirm': 'Are you sure?'
