@@ -1,0 +1,39 @@
+<div>
+  <small>SELLING</small>
+  <h1><%= "#{@quote.company_name} (#{@quote.symbol})" %></h1>
+  <table>
+    <tr>
+      <td>Symbol</td>
+      <td><%= @quote.symbol %></td>
+    </tr>
+
+    <tr>
+      <td>Company Name</td>
+      <td><%= @quote.company_name %></td>
+    </tr>
+
+    <tr>
+      <td>Price</td>
+      <td><%= @quote.cost_price %></td>
+    </tr>
+  </table>
+
+  <div>
+    <h5>
+      You currently own <b><%= @stock.shares %></b> shares of
+      <%= @stock.company_name %>
+    </h5>
+    <%= form_with url: sell_stock_path, model: Stock.new, method: :post do |f| %>
+      <%= f.hidden_field :symbol, value: @quote.symbol %>
+      <%= f.hidden_field :company_name, value: @quote.company_name %>
+      <%= f.hidden_field :cost_price, value: @quote.cost_price %>
+      <%= f.number_field :shares, placeholder: 'Number of shares to sell...' %>
+      <%= f.submit "Sell #{@quote.company_name}" %>
+    <% end %>
+  </div>
+
+  <hr />
+
+  <%= link_to 'Back to stocks', stocks_path %> <br />
+  <%= link_to 'Look for new stock', new_quote_path %>
+</div>

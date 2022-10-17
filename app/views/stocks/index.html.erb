@@ -1,8 +1,4 @@
-<%=
-  if current_user.approved?
-  link_to '+ Buy Stock', new_quote_path
-  end
-%>
+<%= link_to '+ Buy Stock', new_quote_path if current_user.approved? %>
 
 <% if current_user.approved? %>
   <table>
@@ -26,10 +22,10 @@
           <td><%= format_number(stock.cost_price) %></td>
           <td><%= format_number(stock.cost_price * stock.shares) %></td>
           <td>
-            <%# link_to 'Sell', get_sellstock_path(stock.symbol) %>
+            <%= link_to 'Sell', get_sellstock_path(stock.symbol) %>
           </td>
           <td>
-            <% link_to 'Buy', quote_path(stock.symbol) %>
+            <%= link_to 'Buy', quote_path(stock.symbol) %>
           </td>
           <td>
             <%=
