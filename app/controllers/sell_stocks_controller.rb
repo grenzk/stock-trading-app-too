@@ -12,7 +12,7 @@ class SellStocksController < ApplicationController
       current_user.sell_stock(stock_params[:symbol], stock_params[:shares].to_f)
 
     if @stock
-      UserTransaction.record(@stock, 'sell')
+      UserTransaction.record(@stock, 2)
 
       redirect_to portfolio_path,
                   notice:

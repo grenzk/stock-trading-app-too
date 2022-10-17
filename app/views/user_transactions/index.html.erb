@@ -1,0 +1,29 @@
+<% if @transactions.empty? %>
+  <h1>No Transactions yet</h1>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Company name</th>
+        <th>Shares</th>
+        <th>Price</th>
+        <th>Amount</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @transactions.each do |transaction| %>
+        <tr>
+          <td><%= transaction.created_at.strftime('%b %d, %Y %I:%M %P') %></td>
+          <td><%= transaction.company_name %></td>
+          <td><%= transaction.shares %></td>
+          <td><%= format_number transaction.price %></td>
+          <td><%= format_number transaction.value %></td>
+          <td><%= transaction.transaction_type_id %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
