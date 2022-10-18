@@ -22,7 +22,7 @@
         <td><%= transaction.shares %></td>
         <td><%= transaction.price %></td>
         <td><%= transaction.value %></td>
-        <td><%# transaction.transaction_type.name %></td>
+        <td><%= transaction.name %></td>
         <td><%= transaction.user.email %></td>
       </tr>
     <% end %>
