@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :stocks, dependent: :destroy
   has_many :user_transactions, dependent: :destroy
 
+  validates :email, presence: true
+
   after_initialize :set_default_role, if: :new_record?
 
   devise :database_authenticatable, :registerable, :validatable
