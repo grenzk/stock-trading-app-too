@@ -1,6 +1,9 @@
 first_user:
   role: admin
   email: john@email.com
+  confirmation_token: BpmBRus8pko81kJYTfGh
+  confirmed_at: <%= Time.now %>
+  confirmation_sent_at: <%= Time.now %>
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
 second_user:
