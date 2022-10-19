@@ -21,6 +21,7 @@
       <% if user_signed_in? %>
         <nav>
           <% if current_user.admin? %>
+             <%= link_to 'Users', admin_path, class: 'link' %>
             <%= link_to 'Pending', admin_pending_traders_path, class: 'link' %>
             <%= link_to 'Create', new_admin_user_path, class: 'link' %>
             <%= link_to 'Transactions', admin_user_transactions_path, class: 'link' %>

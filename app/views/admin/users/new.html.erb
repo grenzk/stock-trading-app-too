@@ -1,9 +1,15 @@
 <h1>Create a new trader account</h1>
 
-<%= simple_form_for [:admin, @user], html: { data: { turbo: false }} do |f| %>
-  <%= f.input :email, required: true, input_html: { autofocus: true } %><br />
-  <%= f.input :password, required: true %><br />
-  <%= f.input :password_confirmation, required: true %><br />
+<div class="create-container">
+  <div class="form-container">
+    <%= simple_form_for [:admin, @user], html: { data: { turbo: false }} do |f| %>
+      <%= f.input :email, required: true, input_html: { autofocus: true } %><br />
+      <%= f.input :password, required: true %><br />
+      <%= f.input :password_confirmation, required: true %><br />
 
-  <%= f.submit 'Create Trader Account' %>
-<% end %>
+      <div class="form-actions">
+        <%= f.submit 'Create Trader Account', class: 'btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>
