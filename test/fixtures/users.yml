@@ -9,6 +9,9 @@ first_user:
 second_user:
   role: trader
   email: steve@email.com
+  confirmation_token: ASDASDASDASDAD
+  confirmed_at: <%= Time.now %>
+  confirmation_sent_at: <%= Time.now %>
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
 third_user:

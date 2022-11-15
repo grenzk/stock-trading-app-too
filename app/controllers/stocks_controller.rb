@@ -36,9 +36,6 @@ class StocksController < ApplicationController
     redirect_to stocks_url, notice: 'Stock was successfully deleted.'
   end
 
-  def Transactions
-  end
-
   def markets
     @company_symbol = params[:symbol] ||= 'MSFT'
     @company = @client.company(@company_symbol)
