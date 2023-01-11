@@ -9,7 +9,7 @@ A Ruby on Rails application that allows users to buy and sell stocks using IEX C
 
 - Ruby on Rails
 - PostgreSQL
-- SASS
+- Sass
 
 ## User Login
 
